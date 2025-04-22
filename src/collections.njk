@@ -1,0 +1,127 @@
+---
+layout: base.njk
+title: Collections
+permalink: /collections/
+---
+
+<div class="mb-10">
+    <h2 class="text-3xl font-bold text-blue-800 mb-4">Our Collections</h2>
+    <p class="text-gray-700 text-lg">Browse our exquisite selection of handcrafted jewelry pieces, featuring unique designs for every occasion.</p>
+</div>
+
+<!-- Main Content with Sidebar -->
+<div class="flex flex-col md:flex-row gap-8">
+    <!-- Sidebar Categories -->
+    <div class="w-full md:w-64 flex-shrink-0">
+        <div class="border border-gray-200 rounded-sm overflow-hidden">
+            <div class="bg-gray-100 p-3 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="font-bold text-gray-800 uppercase text-sm">CATEGORIES</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </div>
+            <div class="divide-y divide-gray-200">
+                {% for category in products.categories %}
+                <div class="category-container">
+                    <a href="#{{ category.id }}" class="block p-3 hover:bg-blue-50 transition-colors duration-200 flex justify-between items-center category-toggle" data-category="{{ category.id }}">
+                        <span class="text-gray-700">{{ category.name }}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400 category-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <div class="subcategories hidden pl-4 bg-gray-50" id="subcategories-{{ category.id }}">
+                        {% for subcategory in category.subcategories %}
+                        <a href="#{{ subcategory.id }}" class="block py-2 px-3 hover:bg-blue-50 transition-colors duration-200 text-sm text-gray-600 border-b border-gray-100 last:border-b-0">
+                            {{ subcategory.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Custom Jewelry</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="md:w-1/2 mx-auto">
+                    <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                         alt="Custom Jewelry Design"
+                         class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Bring Your Vision to Life</h3>
+                    <p class="text-gray-700 mb-4">Our master craftsmen specialize in creating bespoke jewelry pieces tailored to your unique vision. From engagement rings to family heirlooms, we work closely with you to design and craft one-of-a-kind pieces that tell your story.</p>
+                    <p class="text-gray-700 mb-6">Each custom piece begins with a consultation where we discuss your ideas, preferences, and budget. We then create detailed sketches and models before crafting your perfect piece with meticulous attention to detail.</p>
+                    <p class="text-gray-700 italic">Send us an email for a consultation at <span class="font-medium">Ottawa_Opal_Shop@hotmail.com</span></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h2 class="text-2xl font-bold text-blue-800 mb-6">Our Collections</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                 alt="Necklaces Collection"
+                 class="w-full h-64 object-cover">
+            <div class="p-4">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Necklaces</h3>
+                <p class="text-gray-600 mb-4">Elegant necklaces crafted with precision to complement any outfit.</p>
+                <a href="#" class="text-blue-800 font-medium hover:text-blue-600">View Collection →</a>
+            </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                 alt="Bracelets Collection"
+                 class="w-full h-64 object-cover">
+            <div class="p-4">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Bracelets</h3>
+                <p class="text-gray-600 mb-4">Stunning bracelets that add a touch of sophistication to your wrist.</p>
+                <a href="#" class="text-blue-800 font-medium hover:text-blue-600">View Collection →</a>
+            </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <img src="https://images.unsplash.com/photo-1599459183200-28c8a0644e16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                 alt="Earrings Collection"
+                 class="w-full h-64 object-cover">
+            <div class="p-4">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Earrings</h3>
+                <p class="text-gray-600 mb-4">Beautiful earrings designed to frame your face with elegance.</p>
+                <a href="#" class="text-blue-800 font-medium hover:text-blue-600">View Collection →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Categories toggle functionality
+        const categoryToggles = document.querySelectorAll('.category-toggle');
+
+        categoryToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const categoryId = this.getAttribute('data-category');
+                const subcategoriesEl = document.getElementById(`subcategories-${categoryId}`);
+                const chevron = this.querySelector('.category-chevron');
+
+                // Toggle subcategories visibility
+                subcategoriesEl.classList.toggle('hidden');
+
+                // Rotate chevron when expanded
+                if (subcategoriesEl.classList.contains('hidden')) {
+                    chevron.style.transform = 'rotate(0deg)';
+                } else {
+                    chevron.style.transform = 'rotate(90deg)';
+                }
+            });
+        });
+    });
+</script>

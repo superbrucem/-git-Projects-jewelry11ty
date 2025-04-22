@@ -57,22 +57,94 @@
     {
       "id": "necklaces",
       "name": "Necklaces",
-      "description": "Our collection of elegant necklaces and pendants"
+      "description": "Our collection of elegant necklaces and pendants",
+      "subcategories": [
+        {
+          "id": "pendant-necklaces",
+          "name": "Pendant Necklaces"
+        },
+        {
+          "id": "chokers",
+          "name": "Chokers"
+        },
+        {
+          "id": "chains",
+          "name": "Chains"
+        },
+        {
+          "id": "statement-necklaces",
+          "name": "Statement Necklaces"
+        }
+      ]
     },
     {
       "id": "rings",
       "name": "Rings",
-      "description": "Beautiful rings for every occasion"
+      "description": "Beautiful rings for every occasion",
+      "subcategories": [
+        {
+          "id": "engagement-rings",
+          "name": "Engagement Rings"
+        },
+        {
+          "id": "wedding-bands",
+          "name": "Wedding Bands"
+        },
+        {
+          "id": "gemstone-rings",
+          "name": "Gemstone Rings"
+        },
+        {
+          "id": "statement-rings",
+          "name": "Statement Rings"
+        }
+      ]
     },
     {
       "id": "earrings",
       "name": "Earrings",
-      "description": "Stunning earrings to complement any style"
+      "description": "Stunning earrings to complement any style",
+      "subcategories": [
+        {
+          "id": "studs",
+          "name": "Studs"
+        },
+        {
+          "id": "hoops",
+          "name": "Hoops"
+        },
+        {
+          "id": "drops",
+          "name": "Drop Earrings"
+        },
+        {
+          "id": "chandelier",
+          "name": "Chandelier Earrings"
+        }
+      ]
     },
     {
       "id": "bracelets",
       "name": "Bracelets",
-      "description": "Exquisite bracelets crafted with the finest materials"
+      "description": "Exquisite bracelets crafted with the finest materials",
+      "subcategories": [
+        {
+          "id": "tennis-bracelets",
+          "name": "Tennis Bracelets"
+        },
+        {
+          "id": "bangles",
+          "name": "Bangles"
+        },
+        {
+          "id": "cuffs",
+          "name": "Cuffs"
+        },
+        {
+          "id": "charm-bracelets",
+          "name": "Charm Bracelets"
+        }
+      ]
     }
   ]
 }

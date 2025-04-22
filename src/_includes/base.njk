@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}Ottawa Opal Shop</title>
+    <link rel="stylesheet" href="/styles.css">
+    {% block head %}{% endblock %}
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    {% include "header.njk" %}
+
+    <main class="w-full bg-white py-8 flex-grow">
+        <div class="container mx-auto px-4">
+            {{ content | safe }}
+        </div>
+    </main>
+
+    {% include "footer.njk" %}
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>
