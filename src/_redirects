@@ -1,2 +1,1 @@
-# Redirect /admin to password protection
-/admin/* 200! Role=admin
+# No redirects needed - using Netlify Identity for authentication

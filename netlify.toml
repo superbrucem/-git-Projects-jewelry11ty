@@ -2,13 +2,9 @@
   command = "npm run build"
   publish = "public"
 
-# Password protection for admin area
-[[redirects]]
-  from = "/admin/*"
-  to = "/admin/:splat"
-  status = 200
-  force = true
-  conditions = {Role = ["admin"]}
+# Netlify Identity settings
+[template.environment]
+  NETLIFY_IDENTITY_INVITE_ONLY = "true"
 
 # Copy _redirects file to output directory
 [build.processing]
