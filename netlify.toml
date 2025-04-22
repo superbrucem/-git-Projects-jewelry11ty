@@ -2,9 +2,6 @@
   command = "npm run build"
   publish = "public"
 
-# Netlify Identity settings
-[template.environment]
-  NETLIFY_IDENTITY_INVITE_ONLY = "true"
 
 # Copy _redirects file to output directory
 [build.processing]
