@@ -13,25 +13,25 @@ permalink: /collections/
 <div class="flex flex-col md:flex-row gap-8">
     <!-- Sidebar Categories -->
     <div class="w-full md:w-64 flex-shrink-0">
-        <div class="border border-gray-200 rounded-sm overflow-hidden">
+        <div class="border border-gray-200 rounded-sm overflow-hidden shadow-sm">
             <div class="bg-gray-100 p-3 border-b border-gray-200 flex justify-between items-center">
                 <h3 class="font-bold text-gray-800 uppercase text-sm">CATEGORIES</h3>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </div>
-            <div class="divide-y divide-gray-200">
+            <div class="divide-y divide-gray-200 bg-white">
                 {% for category in products.categories %}
                 <div class="category-container">
-                    <a href="#{{ category.id }}" class="block p-3 hover:bg-blue-50 transition-colors duration-200 flex justify-between items-center category-toggle" data-category="{{ category.id }}">
-                        <span class="text-gray-700">{{ category.name }}</span>
+                    <a href="#{{ category.id }}" class="block p-3 hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center category-toggle" data-category="{{ category.id }}">
+                        <span class="text-gray-800 font-medium text-sm">{{ category.name }}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400 category-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </a>
                     <div class="subcategories hidden pl-4 bg-gray-50" id="subcategories-{{ category.id }}">
                         {% for subcategory in category.subcategories %}
-                        <a href="#{{ subcategory.id }}" class="block py-2 px-3 hover:bg-blue-50 transition-colors duration-200 text-sm text-gray-600 border-b border-gray-100 last:border-b-0">
+                        <a href="#{{ subcategory.id }}" class="block py-2 px-3 hover:bg-gray-100 transition-colors duration-200 text-sm text-gray-600 border-b border-gray-100 last:border-b-0">
                             {{ subcategory.name }}
                         </a>
                         {% endfor %}
@@ -63,40 +63,101 @@ permalink: /collections/
 
 
 
-        <h2 class="text-2xl font-bold text-blue-800 mb-6">Our Collections</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                 alt="Necklaces Collection"
-                 class="w-full h-64 object-cover">
-            <div class="p-4">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Necklaces</h3>
-                <p class="text-gray-600 mb-4">Elegant necklaces crafted with precision to complement any outfit.</p>
-                <a href="#" class="text-blue-800 font-medium hover:text-blue-600">View Collection →</a>
+        <h2 class="text-2xl font-bold text-blue-800 mb-6">Featured Gemstones</h2>
+
+        <!-- Featured Gemstones Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="p-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1551406483-3731d1997540?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Natural Yellow Sapphire" class="w-full h-48 object-contain">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">5x4 mm Oval 0.52ct Sparkling Natural Madagascar Intense Orange Yellow Sapphire [Flawless-VVS]</h3>
+                    <p class="mt-2 text-lg font-bold text-red-600">$14.99</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="p-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Natural Blue Sapphire" class="w-full h-48 object-contain">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">7x3.5 mm Marquise 0.45ct Lustrous Natural White Blue Sapphire [Flawless-VVS]</h3>
+                    <p class="mt-2 text-lg font-bold text-red-600">$17.99</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="p-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1615655096345-61a54750068d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Natural Green Sapphire" class="w-full h-48 object-contain">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">5.5x5 mm Oval 0.71ct Lustrous Natural Madagascar Green Sapphire [VVS]</h3>
+                    <p class="mt-2 text-lg font-bold text-red-600">$24.99</p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="p-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Natural Yellow-Green Sapphire" class="w-full h-48 object-contain">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">6x5 mm Oval 0.71ct Lustrous Natural Madagascar Yellow-Green Sapphire [VVS]</h3>
+                    <p class="mt-2 text-lg font-bold text-red-600">$24.99</p>
+                </div>
             </div>
         </div>
 
-        <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                 alt="Bracelets Collection"
-                 class="w-full h-64 object-cover">
-            <div class="p-4">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Bracelets</h3>
-                <p class="text-gray-600 mb-4">Stunning bracelets that add a touch of sophistication to your wrist.</p>
-                <a href="#" class="text-blue-800 font-medium hover:text-blue-600">View Collection →</a>
+        <!-- More Gemstones -->
+        <h2 class="text-2xl font-bold text-blue-800 mb-6">More Gemstones</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Product 5 -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="p-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1616091238212-aca6808e3cf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Natural Ruby" class="w-full h-48 object-contain">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">4x3 mm Oval 0.25ct Natural Unheated Ruby from Madagascar [VVS]</h3>
+                    <p class="mt-2 text-lg font-bold text-red-600">$29.99</p>
+                </div>
             </div>
-        </div>
 
-        <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-            <img src="https://images.unsplash.com/photo-1599459183200-28c8a0644e16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                 alt="Earrings Collection"
-                 class="w-full h-64 object-cover">
-            <div class="p-4">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Earrings</h3>
-                <p class="text-gray-600 mb-4">Beautiful earrings designed to frame your face with elegance.</p>
-                <a href="#" class="text-blue-800 font-medium hover:text-blue-600">View Collection →</a>
+            <!-- Product 6 -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="p-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1600701264246-2f5e526c2e92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Natural Emerald" class="w-full h-48 object-contain">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">5x4 mm Oval 0.45ct Natural Colombian Emerald with Minor Inclusions</h3>
+                    <p class="mt-2 text-lg font-bold text-red-600">$34.99</p>
+                </div>
             </div>
-        </div>
+
+            <!-- Product 7 -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="p-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Natural Amethyst" class="w-full h-48 object-contain">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">8x6 mm Oval 1.25ct Natural Brazilian Amethyst with Deep Purple Color [Flawless]</h3>
+                    <p class="mt-2 text-lg font-bold text-red-600">$19.99</p>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="p-4 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Natural Garnet" class="w-full h-48 object-contain">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">6mm Round 1.0ct Natural Mozambique Garnet with Rich Red Color [VVS]</h3>
+                    <p class="mt-2 text-lg font-bold text-red-600">$22.99</p>
+                </div>
+            </div>
     </div>
 </div>
 

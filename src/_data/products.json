@@ -55,94 +55,172 @@
   ],
   "categories": [
     {
-      "id": "necklaces",
-      "name": "Necklaces",
-      "description": "Our collection of elegant necklaces and pendants",
+      "id": "gemstone-a-m",
+      "name": "NATURAL GEMSTONE A-M",
+      "description": "Natural gemstones from A to M",
       "subcategories": [
         {
-          "id": "pendant-necklaces",
-          "name": "Pendant Necklaces"
+          "id": "amethyst",
+          "name": "Amethyst"
         },
         {
-          "id": "chokers",
-          "name": "Chokers"
+          "id": "aquamarine",
+          "name": "Aquamarine"
         },
         {
-          "id": "chains",
-          "name": "Chains"
+          "id": "citrine",
+          "name": "Citrine"
         },
         {
-          "id": "statement-necklaces",
-          "name": "Statement Necklaces"
+          "id": "emerald",
+          "name": "Emerald"
+        },
+        {
+          "id": "garnet",
+          "name": "Garnet"
+        },
+        {
+          "id": "jade",
+          "name": "Jade"
+        },
+        {
+          "id": "lapis-lazuli",
+          "name": "Lapis Lazuli"
+        },
+        {
+          "id": "moonstone",
+          "name": "Moonstone"
         }
       ]
     },
     {
-      "id": "rings",
-      "name": "Rings",
-      "description": "Beautiful rings for every occasion",
+      "id": "gemstone-n-z",
+      "name": "NATURAL GEMSTONE N-Z",
+      "description": "Natural gemstones from N to Z",
       "subcategories": [
         {
-          "id": "engagement-rings",
-          "name": "Engagement Rings"
+          "id": "onyx",
+          "name": "Onyx"
         },
         {
-          "id": "wedding-bands",
-          "name": "Wedding Bands"
+          "id": "opal",
+          "name": "Opal"
         },
         {
-          "id": "gemstone-rings",
-          "name": "Gemstone Rings"
+          "id": "pearl",
+          "name": "Pearl"
         },
         {
-          "id": "statement-rings",
-          "name": "Statement Rings"
+          "id": "peridot",
+          "name": "Peridot"
+        },
+        {
+          "id": "ruby",
+          "name": "Ruby"
+        },
+        {
+          "id": "tanzanite",
+          "name": "Tanzanite"
+        },
+        {
+          "id": "turquoise",
+          "name": "Turquoise"
+        },
+        {
+          "id": "zircon",
+          "name": "Zircon"
         }
       ]
     },
     {
-      "id": "earrings",
-      "name": "Earrings",
-      "description": "Stunning earrings to complement any style",
+      "id": "natural-garnet",
+      "name": "NATURAL GARNET",
+      "description": "Beautiful natural garnet gemstones",
       "subcategories": [
         {
-          "id": "studs",
-          "name": "Studs"
+          "id": "almandine",
+          "name": "Almandine"
         },
         {
-          "id": "hoops",
-          "name": "Hoops"
+          "id": "pyrope",
+          "name": "Pyrope"
         },
         {
-          "id": "drops",
-          "name": "Drop Earrings"
+          "id": "spessartite",
+          "name": "Spessartite"
         },
         {
-          "id": "chandelier",
-          "name": "Chandelier Earrings"
+          "id": "tsavorite",
+          "name": "Tsavorite"
         }
       ]
     },
     {
-      "id": "bracelets",
-      "name": "Bracelets",
-      "description": "Exquisite bracelets crafted with the finest materials",
+      "id": "natural-sapphire",
+      "name": "NATURAL SAPPHIRE",
+      "description": "Exquisite natural sapphires in various colors",
       "subcategories": [
         {
-          "id": "tennis-bracelets",
-          "name": "Tennis Bracelets"
+          "id": "blue-sapphire",
+          "name": "Blue Sapphire"
         },
         {
-          "id": "bangles",
-          "name": "Bangles"
+          "id": "pink-sapphire",
+          "name": "Pink Sapphire"
         },
         {
-          "id": "cuffs",
-          "name": "Cuffs"
+          "id": "yellow-sapphire",
+          "name": "Yellow Sapphire"
         },
         {
-          "id": "charm-bracelets",
-          "name": "Charm Bracelets"
+          "id": "padparadscha",
+          "name": "Padparadscha"
+        }
+      ]
+    },
+    {
+      "id": "natural-topaz-quartz",
+      "name": "NATURAL TOPAZ - QUARTZ",
+      "description": "Beautiful natural topaz and quartz varieties",
+      "subcategories": [
+        {
+          "id": "blue-topaz",
+          "name": "Blue Topaz"
+        },
+        {
+          "id": "imperial-topaz",
+          "name": "Imperial Topaz"
+        },
+        {
+          "id": "smoky-quartz",
+          "name": "Smoky Quartz"
+        },
+        {
+          "id": "rose-quartz",
+          "name": "Rose Quartz"
+        }
+      ]
+    },
+    {
+      "id": "natural-diamond",
+      "name": "NATURAL DIAMOND",
+      "description": "Stunning natural diamonds in various cuts and colors",
+      "subcategories": [
+        {
+          "id": "white-diamond",
+          "name": "White Diamond"
+        },
+        {
+          "id": "yellow-diamond",
+          "name": "Yellow Diamond"
+        },
+        {
+          "id": "pink-diamond",
+          "name": "Pink Diamond"
+        },
+        {
+          "id": "black-diamond",
+          "name": "Black Diamond"
         }
       ]
     }
