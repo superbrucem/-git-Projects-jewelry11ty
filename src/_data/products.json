@@ -223,6 +223,93 @@
           "name": "Black Diamond"
         }
       ]
+    },
+    {
+      "id": "collection-divider",
+      "name": "SIGNATURE COLLECTIONS",
+      "description": "Explore our exclusive themed jewelry collections",
+      "subcategories": []
+    },
+    {
+      "id": "5-element",
+      "name": "5 ELEMENT",
+      "description": "Inspired by the classical elements of earth, water, air, fire, and spirit",
+      "subcategories": [
+        {
+          "id": "earth-element",
+          "name": "Terra Embrace Ring"
+        },
+        {
+          "id": "water-element",
+          "name": "Aqua Flow Pendant"
+        },
+        {
+          "id": "air-element",
+          "name": "Zephyr Whisper Earrings"
+        },
+        {
+          "id": "fire-element",
+          "name": "Ember Glow Bracelet"
+        },
+        {
+          "id": "spirit-element",
+          "name": "Ethereal Soul Necklace"
+        }
+      ]
+    },
+    {
+      "id": "greek-gods",
+      "name": "GREEK GODS",
+      "description": "Embody the power and majesty of ancient deities with our Greek Gods collection",
+      "subcategories": [
+        {
+          "id": "zeus",
+          "name": "Zeus Thunderbolt Pendant"
+        },
+        {
+          "id": "athena",
+          "name": "Athena Wisdom Bracelet"
+        },
+        {
+          "id": "apollo",
+          "name": "Apollo Sunray Ring"
+        },
+        {
+          "id": "aphrodite",
+          "name": "Aphrodite Love Earrings"
+        },
+        {
+          "id": "poseidon",
+          "name": "Poseidon Trident Necklace"
+        }
+      ]
+    },
+    {
+      "id": "underworld",
+      "name": "UNDERWORLD",
+      "description": "Explore the mysterious depths with our dark and enchanting Underworld collection",
+      "subcategories": [
+        {
+          "id": "hades",
+          "name": "Hades Shadow Crown Ring"
+        },
+        {
+          "id": "persephone",
+          "name": "Persephone Pomegranate Pendant"
+        },
+        {
+          "id": "cerberus",
+          "name": "Cerberus Guardian Bracelet"
+        },
+        {
+          "id": "styx",
+          "name": "River Styx Flowing Necklace"
+        },
+        {
+          "id": "charon",
+          "name": "Charon's Passage Earrings"
+        }
+      ]
     }
   ]
 }
