@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="/styles.css">
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        // Check if Netlify Identity Widget loaded correctly
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof netlifyIdentity === 'undefined') {
+                console.error('Netlify Identity Widget failed to load!');
+                // Try loading it again
+                const script = document.createElement('script');
+                script.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+                script.onload = function() {
+                    console.log('Netlify Identity Widget loaded successfully on retry');
+                    if (typeof netlifyIdentity !== 'undefined') {
+                        netlifyIdentity.on('init', user => {
+                            console.log('Netlify Identity initialized', user ? 'with user' : 'without user');
+                        });
+                    }
+                };
+                script.onerror = function() {
+                    console.error('Failed to load Netlify Identity Widget even on retry');
+                    alert('Failed to load authentication system. Please refresh the page and try again.');
+                };
+                document.head.appendChild(script);
+            } else {
+                console.log('Netlify Identity Widget loaded successfully');
+            }
+        });
+    </script>
     <style>
         .hidden {
             display: none;
@@ -122,6 +148,16 @@
                     </p>
                 </div>
                 <button id="login-button" class="btn">Continue to Admin</button>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <h3 class="font-bold mb-2">Having trouble with Netlify Identity?</h3>
+                <p class="mb-4 text-sm text-gray-600">If the Netlify Identity login button doesn't work, you can use direct GitHub authentication:</p>
+                <div class="form-group">
+                    <label for="admin-password">Admin Password</label>
+                    <input type="password" id="admin-password" class="form-control" placeholder="Enter admin password">
+                </div>
+                <button id="direct-login-button" class="bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">Login with Password</button>
             </div>
         </div>
 
@@ -271,8 +307,10 @@
         const alertContainer = document.getElementById('alert-container');
         const loginButton = document.getElementById('login-button');
         const netlifyLoginButton = document.getElementById('netlify-login');
+        const directLoginButton = document.getElementById('direct-login-button');
         const logoutButton = document.getElementById('logout-button');
         const tokenInput = document.getElementById('github-token');
+        const adminPasswordInput = document.getElementById('admin-password');
         const productForm = document.getElementById('product-form');
         const categoryForm = document.getElementById('category-form');
         const productList = document.getElementById('product-list');
@@ -295,15 +333,28 @@
 
         // Event Listeners
         netlifyLoginButton.addEventListener('click', () => {
-            netlify.identity.open();
+            if (typeof netlifyIdentity !== 'undefined') {
+                netlifyIdentity.open();
+            } else {
+                console.error('Netlify Identity Widget not loaded!');
+                showAlert('Error: Netlify Identity Widget not loaded!', 'error');
+            }
         });
         loginButton.addEventListener('click', handleLogin);
+        directLoginButton.addEventListener('click', handleDirectLogin);
         logoutButton.addEventListener('click', () => {
-            netlify.identity.logout();
+            if (typeof netlifyIdentity !== 'undefined') {
+                netlifyIdentity.logout();
+            }
             localStorage.removeItem('github_token');
+            localStorage.removeItem('admin_authenticated');
             token = '';
             productsData = null;
             currentFileSha = '';
+            netlifyUser = null;
+            adminPanel.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+            showAlert('You have been logged out', 'success');
         });
         productForm.addEventListener('submit', handleProductSubmit);
         categoryForm.addEventListener('submit', handleCategorySubmit);
@@ -312,25 +363,31 @@
         cancelCategoryEditButton.addEventListener('click', resetCategoryForm);
 
         // Netlify Identity Event Listeners
-        netlify.identity.on('init', user => {
-            if (user) {
+        if (typeof netlifyIdentity !== 'undefined') {
+            // Use netlifyIdentity object
+            netlifyIdentity.on('init', user => {
+                if (user) {
+                    netlifyUser = user;
+                    showAlert('You are logged in with Netlify Identity', 'success');
+                }
+            });
+
+            netlifyIdentity.on('login', user => {
                 netlifyUser = user;
-                showAlert('You are logged in with Netlify Identity', 'success');
-            }
-        });
+                showAlert('Successfully logged in with Netlify Identity', 'success');
+                netlifyIdentity.close();
+            });
 
-        netlify.identity.on('login', user => {
-            netlifyUser = user;
-            showAlert('Successfully logged in with Netlify Identity', 'success');
-            netlify.identity.close();
-        });
-
-        netlify.identity.on('logout', () => {
-            netlifyUser = null;
-            adminPanel.classList.add('hidden');
-            loginSection.classList.remove('hidden');
-            showAlert('You have been logged out', 'success');
-        });
+            netlifyIdentity.on('logout', () => {
+                netlifyUser = null;
+                adminPanel.classList.add('hidden');
+                loginSection.classList.remove('hidden');
+                showAlert('You have been logged out', 'success');
+            });
+        } else {
+            console.error('Netlify Identity Widget not loaded!');
+            showAlert('Error: Netlify Identity Widget not loaded!', 'error');
+        }
 
         // Tab functionality
         tabButtons.forEach(button => {
@@ -351,22 +408,52 @@
             });
         });
 
-        // Check for stored token
+        // Check for stored token and authentication status
         function checkStoredToken() {
             const storedToken = localStorage.getItem('github_token');
+            const isAuthenticated = localStorage.getItem('admin_authenticated') === 'true';
+
             if (storedToken) {
                 tokenInput.value = storedToken;
-                // We'll wait for Netlify Identity to initialize before trying to log in
-                // The login will be handled by the 'init' event if the user is already logged in
+
+                // If we have direct authentication, bypass Netlify Identity
+                if (isAuthenticated) {
+                    netlifyUser = { email: 'admin@example.com' }; // Dummy user object
+                    handleLogin();
+                }
+                // Otherwise, we'll wait for Netlify Identity to initialize
+            }
+        }
+
+        // Direct login handler (password-based fallback)
+        function handleDirectLogin() {
+            const password = adminPasswordInput.value.trim();
+            const correctPassword = 'jewelry-admin'; // Simple hardcoded password - change this!
+
+            if (password === correctPassword) {
+                // Set authenticated flag
+                localStorage.setItem('admin_authenticated', 'true');
+                netlifyUser = { email: 'admin@example.com' }; // Dummy user object
+                showAlert('Successfully authenticated with password', 'success');
+
+                // Continue with GitHub token login
+                handleLogin();
+            } else {
+                showAlert('Incorrect admin password', 'error');
             }
         }
 
         // Login Handler
         async function handleLogin() {
-            // Check if user is logged in with Netlify Identity
+            // Check if user is logged in with Netlify Identity or direct login
             if (!netlifyUser) {
-                showAlert('Please login with Netlify Identity first', 'error');
-                netlify.identity.open();
+                showAlert('Please login first', 'error');
+                if (typeof netlifyIdentity !== 'undefined') {
+                    netlifyIdentity.open();
+                } else {
+                    console.error('Netlify Identity Widget not loaded!');
+                    showAlert('Try using the password login option below', 'error');
+                }
                 return;
             }
 
