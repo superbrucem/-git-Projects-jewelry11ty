@@ -1,0 +1,78 @@
+{
+  "items": [
+    {
+      "id": "silver-necklace-1",
+      "name": "Silver Pendant Necklace",
+      "price": 79.99,
+      "salePrice": 59.99,
+      "onSale": true,
+      "description": "Elegant silver pendant with cubic zirconia. This beautiful piece features a delicate chain and stunning pendant that catches the light from every angle.",
+      "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "category": "necklaces",
+      "featured": true,
+      "rating": 4.5,
+      "reviews": 42
+    },
+    {
+      "id": "gold-ring-1",
+      "name": "14K Gold Ring",
+      "price": 249.99,
+      "salePrice": null,
+      "onSale": false,
+      "description": "Classic 14K gold band with diamond accent. This timeless piece is perfect for everyday wear or special occasions.",
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "category": "rings",
+      "featured": true,
+      "rating": 5,
+      "reviews": 18
+    },
+    {
+      "id": "pearl-earrings-1",
+      "name": "Freshwater Pearl Earrings",
+      "price": 89.99,
+      "salePrice": 69.99,
+      "onSale": true,
+      "description": "Elegant freshwater pearl earrings with sterling silver posts. These classic earrings add a touch of sophistication to any outfit.",
+      "image": "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "category": "earrings",
+      "featured": false,
+      "rating": 4,
+      "reviews": 27
+    },
+    {
+      "id": "diamond-bracelet-1",
+      "name": "Diamond Tennis Bracelet",
+      "price": 1299.99,
+      "salePrice": null,
+      "onSale": false,
+      "description": "Stunning diamond tennis bracelet featuring 3 carats of brilliant-cut diamonds set in 18K white gold. A true statement piece that will last a lifetime.",
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "category": "bracelets",
+      "featured": true,
+      "rating": 4.8,
+      "reviews": 12
+    }
+  ],
+  "categories": [
+    {
+      "id": "necklaces",
+      "name": "Necklaces",
+      "description": "Our collection of elegant necklaces and pendants"
+    },
+    {
+      "id": "rings",
+      "name": "Rings",
+      "description": "Beautiful rings for every occasion"
+    },
+    {
+      "id": "earrings",
+      "name": "Earrings",
+      "description": "Stunning earrings to complement any style"
+    },
+    {
+      "id": "bracelets",
+      "name": "Bracelets",
+      "description": "Exquisite bracelets crafted with the finest materials"
+    }
+  ]
+}
