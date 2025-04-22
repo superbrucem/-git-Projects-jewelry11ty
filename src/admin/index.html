@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewelry Admin</title>
+    <title>Ottawa Opal Shop Admin</title>
     <link rel="stylesheet" href="/styles.css">
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -39,7 +39,15 @@
         }
         .admin-container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 2rem auto;
+            padding: 0;
+            background-color: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .admin-content {
             padding: 2rem;
         }
         .form-group {
@@ -121,16 +129,17 @@
 </head>
 <body class="bg-gray-100 min-h-screen">
     <div class="admin-container">
-        <header class="mb-8">
+        <header class="mb-8 bg-blue-900 text-white p-6 -m-6 mb-8 rounded-t-lg">
             <div class="flex justify-between items-center">
                 <div>
-                    <h1 class="text-3xl font-bold text-blue-600 mb-2">Jewelry Admin</h1>
-                    <p class="text-gray-600">Manage your jewelry products and categories</p>
+                    <h1 class="text-3xl font-bold mb-2">Ottawa Opal Shop Admin</h1>
+                    <p class="text-blue-100">Manage your jewelry products and categories</p>
                 </div>
-                <button id="logout-button" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-300">Logout</button>
+                <button id="logout-button" class="bg-blue-800 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">Logout</button>
             </div>
         </header>
 
+        <div class="admin-content">
         <!-- Login Form -->
         <div id="login-section" class="bg-white p-6 rounded-lg shadow-md mb-8">
             <h2 class="text-xl font-bold mb-4">Admin Login</h2>
@@ -967,5 +976,6 @@
         // Initialize
         checkStoredToken();
     </script>
+        </div> <!-- End of admin-content -->
 </body>
 </html>
