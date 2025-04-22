@@ -27,8 +27,8 @@
     </div>
 
     <!-- Welcome Bar -->
-    <div class="bg-blue-800 text-white py-2 px-4 w-full">
-        <div class="w-full flex justify-between items-center px-4">
+    <div class="bg-blue-800 text-white py-2 w-full">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
             <div>Welcome to Ottawa Opal Shop!</div>
             <div class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -41,7 +41,7 @@
 
     <!-- Main Header -->
     <header class="bg-blue-900 text-white py-4 shadow-lg w-full">
-        <div class="w-full px-4 flex justify-between items-center">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
             <h1 class="text-3xl font-bold">OTTAWA OPAL SHOP</h1>
 
             <div class="flex items-center space-x-4">
@@ -82,7 +82,7 @@
 
     <!-- Page Content Container -->
     <div class="w-full bg-white py-8">
-        <div class="w-full px-4">
+        <div class="max-w-6xl mx-auto px-4">
             <div class="mb-10">
                 <h2 class="text-3xl font-bold text-blue-800 mb-4">Our Collection</h2>
                 <p class="text-gray-700 text-lg">Discover our exquisite selection of handcrafted jewelry pieces.</p>
@@ -100,7 +100,7 @@
             <!-- Featured Products -->
             <section class="mb-12">
                 <h2 class="text-2xl font-bold text-gray-800 mb-6">Featured Products</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {% assign featured_products = products.items | where: "featured", true %}
                     {% for product in featured_products %}
                     <div class="card">
@@ -158,7 +158,7 @@
                 <h2 class="text-2xl font-bold text-gray-800 mb-6">{{ category.name }}</h2>
                 <p class="text-gray-600 mb-6">{{ category.description }}</p>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {% assign category_products = products.items | where: "category", category.id %}
                     {% for product in category_products %}
                     <div class="card">
@@ -214,7 +214,7 @@
 
     <!-- Footer -->
     <footer class="bg-blue-900 text-white py-8 mt-12 w-full">
-        <div class="w-full px-8">
+        <div class="max-w-6xl mx-auto px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <h3 class="text-2xl font-bold mb-2">Ottawa Opal Shop</h3>
