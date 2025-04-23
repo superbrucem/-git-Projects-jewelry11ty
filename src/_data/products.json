@@ -232,8 +232,8 @@
     },
     {
       "id": "5-element",
-      "name": "5 ELEMENT",
-      "description": "Inspired by the classical elements of earth, water, air, fire, and spirit",
+      "name": "THE ELEMENTAL HARMONY SERIES",
+      "description": "Exquisite jewelry inspired by the classical elements of earth, water, air, fire, and spirit",
       "subcategories": [
         {
           "id": "earth-element",
@@ -259,8 +259,8 @@
     },
     {
       "id": "greek-gods",
-      "name": "GREEK GODS",
-      "description": "Embody the power and majesty of ancient deities with our Greek Gods collection",
+      "name": "OLYMPIAN LEGACY COLLECTION",
+      "description": "Sophisticated pieces honoring the timeless majesty of ancient Greek deities",
       "subcategories": [
         {
           "id": "zeus",
@@ -286,8 +286,8 @@
     },
     {
       "id": "underworld",
-      "name": "UNDERWORLD",
-      "description": "Explore the mysterious depths with our dark and enchanting Underworld collection",
+      "name": "MYSTIC DEPTHS COLLECTION",
+      "description": "Elegant jewelry inspired by the enigmatic beauty of the underworld realm",
       "subcategories": [
         {
           "id": "hades",
