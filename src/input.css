@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
 @layer components {
   .btn {
     @apply bg-blue-800 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300;
@@ -9,5 +14,14 @@
 
   .card {
     @apply border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .marquee-container {
+    @apply w-full overflow-hidden;
+  }
+
+  .marquee-content {
+    @apply inline-block whitespace-nowrap;
+    animation: marquee 30s linear infinite;
   }
 }
