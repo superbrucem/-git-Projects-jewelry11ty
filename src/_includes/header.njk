@@ -45,25 +45,25 @@
             <!-- Shop Logo/Name -->
             <div class="mb-4 md:mb-0 flex items-center">
                 <h1 class="text-2xl font-bold tracking-wider flex items-center">
-                    <span class="text-luxury-gold mr-2 animate-diamond-left diamond-container">
-                        ◆
+                    <span class="text-green-400 mr-2 animate-opal-left opal-container">
+                        <span class="opal-circle">●</span>
                         <span class="sparkle-1"></span>
                         <span class="sparkle-2"></span>
                         <span class="sparkle-3"></span>
                         <span class="sparkle-4"></span>
-                        <span class="diamond-sparkle"></span>
+                        <span class="opal-sparkle"></span>
                     </span>
                     <span class="relative shop-name-container">
                         <span class="animate-shimmer inline-block">OTTAWA OPAL SHOP</span>
                         <span class="absolute top-0 left-0 animate-glow">OTTAWA OPAL SHOP</span>
                     </span>
-                    <span class="text-luxury-gold ml-2 animate-diamond-right diamond-container">
-                        ◆
+                    <span class="text-green-400 ml-2 animate-opal-right opal-container">
+                        <span class="opal-circle">●</span>
                         <span class="sparkle-1"></span>
                         <span class="sparkle-2"></span>
                         <span class="sparkle-3"></span>
                         <span class="sparkle-4"></span>
-                        <span class="diamond-sparkle"></span>
+                        <span class="opal-sparkle"></span>
                     </span>
                 </h1>
             </div>
@@ -71,9 +71,6 @@
             <style>
                 @keyframes glow {
                     0% { opacity: 0; text-shadow: none; }
-                    20% { opacity: 0; text-shadow: none; }
-                    25% { opacity: 0.6; text-shadow: 0 0 10px rgba(255, 100, 100, 0.9), 0 0 20px rgba(255, 150, 150, 0.5); } /* Sharper red */
-                    30% { opacity: 0; text-shadow: none; }
                     45% { opacity: 0; text-shadow: none; }
                     50% { opacity: 0.8; text-shadow: 0 0 15px rgba(100, 255, 100, 0.9), 0 0 25px rgba(150, 255, 150, 0.5); } /* Sharper green */
                     55% { opacity: 0; text-shadow: none; }
@@ -83,16 +80,16 @@
                     100% { opacity: 0; text-shadow: none; }
                 }
 
-                @keyframes diamond-pulse-left {
-                    0% { transform: scale(1) rotate(0deg); opacity: 1; color: #D4AF37; }
-                    50% { transform: scale(1.2) rotate(15deg); opacity: 0.9; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); }
-                    100% { transform: scale(1) rotate(0deg); opacity: 1; color: #D4AF37; }
+                @keyframes opal-pulse-left {
+                    0% { transform: scale(1); opacity: 1; color: #4ade80; }
+                    50% { transform: scale(1.2); opacity: 0.9; color: #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.7); }
+                    100% { transform: scale(1); opacity: 1; color: #4ade80; }
                 }
 
-                @keyframes diamond-pulse-right {
-                    0% { transform: scale(1) rotate(0deg); opacity: 1; color: #D4AF37; }
-                    50% { transform: scale(1.2) rotate(-15deg); opacity: 0.9; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); }
-                    100% { transform: scale(1) rotate(0deg); opacity: 1; color: #D4AF37; }
+                @keyframes opal-pulse-right {
+                    0% { transform: scale(1); opacity: 1; color: #4ade80; }
+                    50% { transform: scale(1.2); opacity: 0.9; color: #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.7); }
+                    100% { transform: scale(1); opacity: 1; color: #4ade80; }
                 }
 
                 @keyframes shimmer-gradient {
@@ -102,9 +99,7 @@
 
                 @keyframes color-cycle {
                     0%, 100% { color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.3); }
-                    25% { color: #ffd0d0; text-shadow: 0 0 10px rgba(255, 100, 100, 0.8), 0 0 20px rgba(255, 150, 150, 0.4); } /* Sharper red */
                     50% { color: #d0ffd0; text-shadow: 0 0 10px rgba(100, 255, 100, 0.8), 0 0 20px rgba(150, 255, 150, 0.4); } /* Sharper green */
-                    75% { color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.3); } /* Pure white */
                 }
 
                 .shop-name-container {
@@ -123,7 +118,6 @@
                     bottom: 0;
                     background: linear-gradient(90deg,
                         rgba(255,255,255,0) 0%,
-                        rgba(255,100,100,0.12) 25%,
                         rgba(100,255,100,0.12) 50%,
                         rgba(255,215,0,0.08) 75%,
                         rgba(255,255,255,0) 100%);
@@ -140,17 +134,17 @@
                     letter-spacing: 0.05em;
                 }
 
-                .animate-diamond-left {
-                    animation: diamond-pulse-left 4s infinite ease-in-out;
+                .animate-opal-left {
+                    animation: opal-pulse-left 4s infinite ease-in-out;
                     display: inline-block;
-                    font-size: 1.2em;
+                    font-size: 1.1em;
                 }
 
-                .animate-diamond-right {
-                    animation: diamond-pulse-right 4s infinite ease-in-out;
+                .animate-opal-right {
+                    animation: opal-pulse-right 4s infinite ease-in-out;
                     animation-delay: 2s;
                     display: inline-block;
-                    font-size: 1.2em;
+                    font-size: 1.1em;
                 }
 
                 .animate-glow {
@@ -167,13 +161,22 @@
                 }
 
                 @keyframes twinkle {
-                    0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0) rotate(0deg); box-shadow: 0 0 0 0 rgba(255,255,255,0); }
-                    50% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(45deg); box-shadow: 0 0 10px 2px rgba(255,255,255,0.8), 0 0 20px 6px rgba(255,215,0,0.4); }
+                    0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0); box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+                    50% { opacity: 1; transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 10px 2px rgba(255,255,255,0.8), 0 0 20px 6px rgba(16,185,129,0.6); }
                 }
 
-                .diamond-container {
+                .opal-container {
                     position: relative;
                     display: inline-block;
+                }
+
+                .opal-circle {
+                    display: inline-block;
+                    background: linear-gradient(135deg, #4ade80, #10b981);
+                    border-radius: 50%;
+                    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+                    position: relative;
+                    z-index: 1;
                 }
 
                 .sparkle-1, .sparkle-2, .sparkle-3, .sparkle-4 {
@@ -185,16 +188,16 @@
                 }
 
                 .sparkle-1 {
-                    width: 4px;
-                    height: 4px;
+                    width: 3px;
+                    height: 3px;
                     top: -2px;
                     left: 30%;
                     animation: sparkle 4s infinite ease-out;
                 }
 
                 .sparkle-2 {
-                    width: 3px;
-                    height: 3px;
+                    width: 2px;
+                    height: 2px;
                     bottom: -2px;
                     right: 30%;
                     animation: sparkle 4s infinite ease-out 1s;
@@ -204,29 +207,30 @@
                     width: 2px;
                     height: 2px;
                     top: 50%;
-                    left: -2px;
+                    left: -1px;
                     animation: sparkle 4s infinite ease-out 2s;
                 }
 
                 .sparkle-4 {
-                    width: 3px;
-                    height: 3px;
+                    width: 2px;
+                    height: 2px;
                     top: 30%;
-                    right: -2px;
+                    right: -1px;
                     animation: sparkle 4s infinite ease-out 3s;
                 }
 
-                .diamond-sparkle {
+                .opal-sparkle {
                     position: absolute;
-                    width: 10px;
-                    height: 10px;
+                    width: 8px;
+                    height: 8px;
                     top: 50%;
                     left: 50%;
-                    background: white;
+                    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(74,222,128,0.8) 50%, rgba(16,185,129,0.6) 100%);
                     opacity: 0;
                     animation: twinkle 5s infinite ease-in-out 0.5s;
-                    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                    border-radius: 50%;
                     z-index: -1;
+                    transform: translate(-50%, -50%);
                 }
             </style>
 
