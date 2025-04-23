@@ -53,7 +53,7 @@
                         <span class="sparkle-4"></span>
                         <span class="diamond-sparkle"></span>
                     </span>
-                    <span class="relative">
+                    <span class="relative shop-name-container">
                         <span class="animate-shimmer inline-block">OTTAWA OPAL SHOP</span>
                         <span class="absolute top-0 left-0 animate-glow">OTTAWA OPAL SHOP</span>
                     </span>
@@ -71,9 +71,15 @@
             <style>
                 @keyframes glow {
                     0% { opacity: 0; text-shadow: none; }
-                    25% { opacity: 0.3; text-shadow: 0 0 8px rgba(255, 215, 0, 0.3); }
-                    50% { opacity: 0.7; text-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); }
-                    75% { opacity: 0.3; text-shadow: 0 0 8px rgba(255, 215, 0, 0.3); }
+                    20% { opacity: 0; text-shadow: none; }
+                    25% { opacity: 0.6; text-shadow: 0 0 10px rgba(255, 100, 100, 0.9), 0 0 20px rgba(255, 150, 150, 0.5); } /* Sharper red */
+                    30% { opacity: 0; text-shadow: none; }
+                    45% { opacity: 0; text-shadow: none; }
+                    50% { opacity: 0.8; text-shadow: 0 0 15px rgba(100, 255, 100, 0.9), 0 0 25px rgba(150, 255, 150, 0.5); } /* Sharper green */
+                    55% { opacity: 0; text-shadow: none; }
+                    70% { opacity: 0; text-shadow: none; }
+                    75% { opacity: 0.7; text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 25px rgba(255, 255, 255, 0.4); } /* Gold */
+                    80% { opacity: 0; text-shadow: none; }
                     100% { opacity: 0; text-shadow: none; }
                 }
 
@@ -94,13 +100,44 @@
                     100% { background-position: 200% center; }
                 }
 
+                @keyframes color-cycle {
+                    0%, 100% { color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.3); }
+                    25% { color: #ffd0d0; text-shadow: 0 0 10px rgba(255, 100, 100, 0.8), 0 0 20px rgba(255, 150, 150, 0.4); } /* Sharper red */
+                    50% { color: #d0ffd0; text-shadow: 0 0 10px rgba(100, 255, 100, 0.8), 0 0 20px rgba(150, 255, 150, 0.4); } /* Sharper green */
+                    75% { color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.3); } /* Pure white */
+                }
+
+                .shop-name-container {
+                    position: relative;
+                    padding: 0 4px;
+                    border-radius: 2px;
+                    overflow: hidden;
+                }
+
+                .shop-name-container::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(90deg,
+                        rgba(255,255,255,0) 0%,
+                        rgba(255,100,100,0.12) 25%,
+                        rgba(100,255,100,0.12) 50%,
+                        rgba(255,215,0,0.08) 75%,
+                        rgba(255,255,255,0) 100%);
+                    background-size: 200% 100%;
+                    animation: shimmer-gradient 16s steps(30) infinite;
+                    z-index: -1;
+                }
+
                 .animate-shimmer {
-                    background: linear-gradient(to right, #ffffff 20%, #f0f0f0 40%, #ffffff 60%, #f0f0f0 80%);
-                    background-size: 200% auto;
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    animation: shimmer-gradient 6s linear infinite;
+                    animation: color-cycle 16s infinite steps(30);
+                    position: relative;
+                    z-index: 1;
+                    font-weight: 700;
+                    letter-spacing: 0.05em;
                 }
 
                 .animate-diamond-left {
@@ -117,7 +154,7 @@
                 }
 
                 .animate-glow {
-                    animation: glow 4s infinite ease-in-out;
+                    animation: glow 16s infinite ease-in-out;
                     color: white;
                 }
 
