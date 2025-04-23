@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }} - {% endif %}Ottawa Opal Shop</title>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Custom styles for categories */
+        .subcategories {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .active-category {
+            background-color: rgba(6, 95, 70, 0.05);
+            border-left: 4px solid #065f46;
+        }
+
+        .category-chevron {
+            transition: transform 0.3s ease;
+        }
+    </style>
     {% block head %}{% endblock %}
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col">
