@@ -18,6 +18,32 @@
             border-left: 4px solid #065f46;
         }
 
+        /* Opal heading animation */
+        .opal-heading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opal-heading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.3) 50%,
+                rgba(255,255,255,0) 100%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
         .category-chevron {
             transition: transform 0.3s ease;
         }
