@@ -45,11 +45,153 @@
             <!-- Shop Logo/Name -->
             <div class="mb-4 md:mb-0 flex items-center">
                 <h1 class="text-2xl font-bold tracking-wider flex items-center">
-                    <span class="text-luxury-gold mr-2">◆</span>
-                    <span>OTTAWA OPAL SHOP</span>
-                    <span class="text-luxury-gold ml-2">◆</span>
+                    <span class="text-luxury-gold mr-2 animate-diamond-left diamond-container">
+                        ◆
+                        <span class="sparkle-1"></span>
+                        <span class="sparkle-2"></span>
+                        <span class="sparkle-3"></span>
+                        <span class="sparkle-4"></span>
+                        <span class="diamond-sparkle"></span>
+                    </span>
+                    <span class="relative">
+                        <span class="animate-shimmer inline-block">OTTAWA OPAL SHOP</span>
+                        <span class="absolute top-0 left-0 animate-glow">OTTAWA OPAL SHOP</span>
+                    </span>
+                    <span class="text-luxury-gold ml-2 animate-diamond-right diamond-container">
+                        ◆
+                        <span class="sparkle-1"></span>
+                        <span class="sparkle-2"></span>
+                        <span class="sparkle-3"></span>
+                        <span class="sparkle-4"></span>
+                        <span class="diamond-sparkle"></span>
+                    </span>
                 </h1>
             </div>
+
+            <style>
+                @keyframes glow {
+                    0% { opacity: 0; text-shadow: none; }
+                    25% { opacity: 0.3; text-shadow: 0 0 8px rgba(255, 215, 0, 0.3); }
+                    50% { opacity: 0.7; text-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); }
+                    75% { opacity: 0.3; text-shadow: 0 0 8px rgba(255, 215, 0, 0.3); }
+                    100% { opacity: 0; text-shadow: none; }
+                }
+
+                @keyframes diamond-pulse-left {
+                    0% { transform: scale(1) rotate(0deg); opacity: 1; color: #D4AF37; }
+                    50% { transform: scale(1.2) rotate(15deg); opacity: 0.9; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); }
+                    100% { transform: scale(1) rotate(0deg); opacity: 1; color: #D4AF37; }
+                }
+
+                @keyframes diamond-pulse-right {
+                    0% { transform: scale(1) rotate(0deg); opacity: 1; color: #D4AF37; }
+                    50% { transform: scale(1.2) rotate(-15deg); opacity: 0.9; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); }
+                    100% { transform: scale(1) rotate(0deg); opacity: 1; color: #D4AF37; }
+                }
+
+                @keyframes shimmer-gradient {
+                    0% { background-position: 0% center; }
+                    100% { background-position: 200% center; }
+                }
+
+                .animate-shimmer {
+                    background: linear-gradient(to right, #ffffff 20%, #f0f0f0 40%, #ffffff 60%, #f0f0f0 80%);
+                    background-size: 200% auto;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: shimmer-gradient 6s linear infinite;
+                }
+
+                .animate-diamond-left {
+                    animation: diamond-pulse-left 4s infinite ease-in-out;
+                    display: inline-block;
+                    font-size: 1.2em;
+                }
+
+                .animate-diamond-right {
+                    animation: diamond-pulse-right 4s infinite ease-in-out;
+                    animation-delay: 2s;
+                    display: inline-block;
+                    font-size: 1.2em;
+                }
+
+                .animate-glow {
+                    animation: glow 4s infinite ease-in-out;
+                    color: white;
+                }
+
+                /* Diamond sparkle effects */
+                @keyframes sparkle {
+                    0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+                    20% { opacity: 0; transform: scale(0) rotate(0deg); }
+                    50% { opacity: 1; transform: scale(1) rotate(45deg); }
+                    80% { opacity: 0; transform: scale(0) rotate(90deg); }
+                }
+
+                @keyframes twinkle {
+                    0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0) rotate(0deg); box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+                    50% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(45deg); box-shadow: 0 0 10px 2px rgba(255,255,255,0.8), 0 0 20px 6px rgba(255,215,0,0.4); }
+                }
+
+                .diamond-container {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .sparkle-1, .sparkle-2, .sparkle-3, .sparkle-4 {
+                    position: absolute;
+                    background: white;
+                    border-radius: 50%;
+                    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.8), 0 0 8px 2px rgba(255, 215, 0, 0.3);
+                    opacity: 0;
+                }
+
+                .sparkle-1 {
+                    width: 4px;
+                    height: 4px;
+                    top: -2px;
+                    left: 30%;
+                    animation: sparkle 4s infinite ease-out;
+                }
+
+                .sparkle-2 {
+                    width: 3px;
+                    height: 3px;
+                    bottom: -2px;
+                    right: 30%;
+                    animation: sparkle 4s infinite ease-out 1s;
+                }
+
+                .sparkle-3 {
+                    width: 2px;
+                    height: 2px;
+                    top: 50%;
+                    left: -2px;
+                    animation: sparkle 4s infinite ease-out 2s;
+                }
+
+                .sparkle-4 {
+                    width: 3px;
+                    height: 3px;
+                    top: 30%;
+                    right: -2px;
+                    animation: sparkle 4s infinite ease-out 3s;
+                }
+
+                .diamond-sparkle {
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    top: 50%;
+                    left: 50%;
+                    background: white;
+                    opacity: 0;
+                    animation: twinkle 5s infinite ease-in-out 0.5s;
+                    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                    z-index: -1;
+                }
+            </style>
 
             <!-- Search, Account and Cart -->
             <div class="flex items-center space-x-6">
